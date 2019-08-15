@@ -1,0 +1,14 @@
+[Unit]
+Description=Nginx Container Systemd Service
+
+[Service]
+TimeoutStartSec=0
+
+ExecStart=/usr/bin/docker run --name host_nginx --rm  -p 80:80 -p 443:443 -v /opt/vols/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v  /opt/vols/nginx/conf/conf.d:/etc/nginx/conf.d -v /opt/vols/nginx/logs:/var/log/nginx -v /opt/vols/nginx/html:/usr/share/nginx/html:ro -v /opt/vols/nginx/rotatelog/rotatelog.sh:/var/log/rotatelog.sh -v /opt/vols/nginx/ssl:/etc/nginx/ssl  nginx:alpine
+
+ExecStop=/usr/bin/docker stop host_nginx
+
+KillMode=none
+
+[Install]
+WantedBy=multi-user.target
