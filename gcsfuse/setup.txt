@@ -17,3 +17,8 @@ gcsfuse gcpbucket_1 /mnt/mountpoing
 
 /etc/fstab
 mount -t gcsfuse -o rw,user gcpbucket_1 /mnt/mountpoint
+
+4. gsutil cp
+
+gsutil cp -r gs://bucket1/sub gs://bucket2/subdir
+
