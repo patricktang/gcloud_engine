@@ -1,0 +1,23 @@
+
+docker nginx
+
+docker pull nginx:alpine
+cd /
+cd opt
+mkdir vols
+cd vols
+mkdir nginx
+cd nginx
+mkdir conf
+mkdir html
+mkdir logs
+mkdir rotatelog
+mkdir ssl
+vi /opt/nginx.service
+
+
+ln -s /opt/nginx.service /etc/systemd/system/nginx.service
+systemctl daemon-reload
+systemctl enable nginx.service
+systemctl status nginx.service
+

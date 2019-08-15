@@ -1,0 +1,5 @@
+
+
+crontab -e
+
+2 0 * * * /usr/bin/docker exec host_nginx /bin/sh /var/log/rotatelog.sh
