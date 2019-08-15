@@ -1,0 +1,19 @@
+
+1. install gcsfuse
+
+export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+apt update
+apt install gcsfuse
+
+2. mount
+
+gsutil ls
+gcsfuse gcpbucket_1 /mnt/mountpoing
+
+
+3. mount  
+
+/etc/fstab
+mount -t gcsfuse -o rw,user gcpbucket_1 /mnt/mountpoint
