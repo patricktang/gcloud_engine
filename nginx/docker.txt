@@ -13,11 +13,13 @@ mkdir html
 mkdir logs
 mkdir rotatelog
 mkdir ssl
+mkdir conf/conf.d
 vi /opt/nginx.service
 
 
 ln -s /opt/nginx.service /etc/systemd/system/nginx.service
 systemctl daemon-reload
 systemctl enable nginx.service
+systemctl start  nginx.service
 systemctl status nginx.service
 
