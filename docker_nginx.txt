@@ -1,0 +1,6 @@
+
+docker pull nginx:mainline-alpine
+
+docker run --name host_nginx --rm -p 80:80 -v /mnt/bk:/usr/share/nginx/html  nginx:mainline-alpine
+
+  
