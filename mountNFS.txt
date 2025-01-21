@@ -1,0 +1,5 @@
+
+apt install -y nfs-common
+
+mount  10.1.1.1:/prodcloudnfs1  bk
+
