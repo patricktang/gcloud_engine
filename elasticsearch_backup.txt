@@ -1,0 +1,32 @@
+
+Ref : https://medium.com/@tushar.jadhav29/backup-and-restore-elasticsearch-snapshot-to-another-cluster-dfe7adc5bf95
+
+
+#### check elasticsearch version
+curl  127.0.0.1:9200
+
+#### list all indices
+curl  'http://127.0.0.1:9200/_cat/indices?v'
+
+####set elasticsearch.ymal
+chown -R elastic:elastic /mnt/bk/els_backup/
+echo 'path.repo: ["/mnt/bk/els_backup"]' >> /etc/elasticsearch/elasticsearch.yml
+
+
+#### backup all
+curl -X PUT "http://127.0.0.1:9200/_snapshot/els_backup_25JanB?pretty" -H 'Content-Type: application/json' -d'
+ {  
+   "type": "fs",   
+   "settings": {   
+     "compress":true,
+     "location": "/mnt/bk/els_backup"  
+  }
+ }
+'
+curl -X PUT "http://127.0.0.1:9200/_snapshot/els_backup_25Jan/els_backup_20250109?pretty"
+
+
+
+#### check backup
+curl -X GET "http://127.0.0.1:9200/_snapshot/_all?pretty"
+
