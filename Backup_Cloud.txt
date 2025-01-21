@@ -19,4 +19,10 @@ tar zcvf root.tar.gz /root
 ls -al
 
 
+
 docker save image_name | gzip > image_name.tar.gz
+
+
+
+#Centos
+chkconfig  > chkconfig.txt
