@@ -1,0 +1,14 @@
+
+A server Disk Full 
+
+# free A Server Boot Disk
+# add A Server Boot Disk to B Server
+# mount A Server Boot 
+# delete some old file in /usr/src 
+# shutdown B Server
+# remove A Server Boot Disk from B Server
+# config A Server Boot Disk 
+# boot A Server 
+
+# clean system storage clearly
+# apt autoremove -y --purge 
