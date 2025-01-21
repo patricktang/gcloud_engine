@@ -1,0 +1,20 @@
+/usr/bin/docker run --name host_mariadb --rm  -e MYSQL_ROOT_PASSWORD=Password  -v /opt/vols/mariadb/conf.d:/etc/mysql/conf.d -v /opt/vols/mariadb/data:/var/lib/mysql -p 3306:3306 mariadb:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+
+
+mysql -u root -h localhost
+
+show variables like 'char%';
+show engines ;
+show variables like 'collation%';
+SELECT User FROM mysql.user;
+show databases;
+show engines;
+
+
+#mysqldump
+mysqldump -u root -p -h localhost --default-character-set=utf8 -A > /mnt/bk/db_dump/2025Jan.sql
+
+
+#mariabackup
+mariabackup --backup --target-dir /mnt/bk/db_backup/2025Jan --user=root 
