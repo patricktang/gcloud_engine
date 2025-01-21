@@ -1,0 +1,7 @@
+
+/usr/bin/docker run --name host_mongo --rm -e MONGO_INITDB_ROOT_USERNAME=mongoadm -e MONGO_INITDB_ROOT_PASSWORD=mongo_Pass -v /opt/vols/mongodb/data/db:/data/db -p 27017:27017 mongo:latest
+
+Ref : https://ken551113.github.io/2018/10/17/MongoDB_backup/
+
+mongodump -h 127.0.0.1 -d test -u mongoadm -p mongo_Pass -o /tmp/mongo_backup_2025Jan
+
