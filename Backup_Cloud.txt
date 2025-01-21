@@ -1,0 +1,22 @@
+mkdir /mnt/bk
+mount /dev/sdb1 /mnt/bk
+cd /mnt/bk/back_2025Jan
+mkdir "$(hostname -s )"
+cd "$(hostname -s )"
+
+
+
+uname -a > uname.txt
+systemctl list-units > services.txt
+mount > mount.txt
+docker images ls > docker_images.txt 
+docker ps > docker_ps.txt
+tar zcvf crontab.tar.gz /var/spool/cron
+tar zcvf etc.tar.gz /etc
+tar zcvf opt.tar.gz /opt
+tar zcvf home.tar.gz /home
+tar zcvf root.tar.gz /root
+ls -al
+
+
+docker save image_name | gzip > image_name.tar.gz
