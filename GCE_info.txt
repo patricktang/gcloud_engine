@@ -1,0 +1,5 @@
+
+
+gcloud compute instances describe --zone us-east1-c --project project_id   instance_name
+
+
