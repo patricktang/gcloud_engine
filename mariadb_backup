@@ -17,4 +17,4 @@ mysqldump -u root -p -h localhost --default-character-set=utf8 -A > /mnt/bk/db_d
 
 
 #mariabackup
-mariabackup --backup --target-dir /mnt/bk/db_backup/2025Jan --user=root 
+mariabackup --backup --target-dir /mnt/bk/db_backup/2025Jan --user=root --password=Password
